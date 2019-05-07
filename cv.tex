@@ -1,0 +1,295 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[colorlinks=true, linkcolor=black]{hyperref} % Links
+\usepackage{makeidx} % Indexierung
+\usepackage{siunitx}
+\usepackage[ngerman]{babel} % deutsche Sonderzeichen
+\usepackage[utf8]{inputenc}
+\usepackage{geometry} % Dokumentendesign wie Seiten- oder Zeilenabstand bestimmen
+\usepackage[toc,page]{appendix}
+
+% Graphiken
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfcore}
+\usepackage{pgfopts}
+\usepackage{pgfornament}
+\usepackage{pgf}
+\usepackage{ifthen}
+\usepackage{booktabs}
+
+% Tabellen
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{colortbl} % Tabellen faerben
+\usepackage{multirow}
+\usepackage{diagbox} % Tabellenzelle diagonal splitten
+
+\usepackage{xcolor} % Farben
+\usepackage[framemethod=tikz]{mdframed} % Hintergrunderstellung
+\usepackage{enumitem} % Enumerate mit Buchstaben nummerierbar machen
+\usepackage{pdfpages}
+\usepackage{listings} % Source-Code darstellen
+\usepackage{eurosym} % Eurosymbol
+\usepackage[square,numbers]{natbib}
+\usepackage{here} % figure an richtiger Stelle positionieren
+\usepackage{verbatim} % Blockkommentare mit \begin{comment}...\end{comment}
+\usepackage{ulem} % \sout{} (durchgestrichener Text)
+
+\usepackage{fontawesome}
+
+% BibLaTex
+\bibliographystyle{acm}
+
+% Aendern des Anhangnamens (Seite und Inhaltsverzeichnis)
+\renewcommand\appendixtocname{Anhang}
+\renewcommand\appendixpagename{Anhang}
+
+% mdframed Style
+\mdfdefinestyle{codebox}{
+	linewidth=2.5pt,
+	linecolor=codebordercolor,
+	backgroundcolor=codecolor,
+	shadow=true,
+	shadowcolor=black!40!white,
+	fontcolor=black,
+	everyline=true,
+}
+
+% Seitenabstaende
+\geometry{left=30mm,right=30mm,top=20mm,bottom=20mm}
+
+% TikZ Bibliotheken
+\usetikzlibrary{
+    arrows,
+    arrows.meta,
+    decorations,
+    backgrounds,
+    positioning,
+    fit,
+    petri,
+    shadows,
+    datavisualization.formats.functions,
+    calc,
+    shapes,
+    shapes.multipart
+}
+
+\pgfplotsset{width=7cm,compat=1.15}
+
+\definecolor{codecolor}{HTML}{EEEEEE}
+\definecolor{codebordercolor}{HTML}{CCCCCC}
+
+% Standardeinstellungen fuer Source-Code
+\lstset{
+    language=C,
+    breaklines=true,
+    keepspaces=true,
+    keywordstyle=\bfseries\color{green!70!black},
+    basicstyle=\ttfamily\color{black},
+    commentstyle=\itshape\color{purple},
+    identifierstyle=\color{blue},
+    stringstyle=\color{orange},
+    showstringspaces=false,
+    rulecolor=\color{black},
+    tabsize=2,
+    escapeinside={\%*}{*\%},
+}
+
+%\input{libuml}
+%\input{liberm}
+
+\def\datecolsize{4cm}
+\def\sec#1{
+  \section*{#1}
+  \tikz[baseline=-8pt]{
+    \draw[very thick] (0,0) -- (\linewidth,0);
+  }
+  \noindent
+}
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge{Jonas Fa{\ss}bender}} \\
+\end{center}
+\noindent
+\begin{tabu} to \linewidth {lXl}
+\faMapMarker \ Im Lerchengrund 16, 51491 Overath, Germany
+  && \\
+\faPhone \ +49 1578 8286049
+  &&\faHome \ \href{https://fassbender.dev}{fassbender.dev}
+  \\
+\faEnvelope \ \href{mailto:jonas@fassbender.dev}
+              {jonas@fassbender.dev}
+  && \faGithub \ \href{https://github.com/jofas}
+                 {github.com/jofas}
+\end{tabu}
+
+\sec{Research Interests}
+\begin{tabu} to \linewidth {X}
+I am currently interested in Machine Learning, especially
+focused on Conformal Prediction, predicting with
+certainty and how to implement Machine Learning models
+efficiently.
+\end{tabu}
+
+\sec{Education}
+\begin{tabu} to \linewidth {p{\datecolsize}X}
+2016 - 2019 (Expected) & BSc Computer Science, Technical
+                         University of Cologne. \\ & \\
+                       & Relevant Projects: \\
+                       &%
+                        \begin{itemize}
+                          \item Partial Classification
+                                Forest: A Monte Carlo based
+                                Meta Classifier for
+                                Supervised Learning. My
+                                first contact with the idea
+                                of predicting with
+                                certainty. Led my to
+                                Conformal Prediction.
+                                I intent to write
+                                my Bachelor Thesis about
+                                this topic.
+
+                          \item Monte Carlo Localization:
+                                Part of the Artificial
+                                Intelligence course. We
+                                localized a LEGO EV3 robot
+                                in known surroundings using
+                                a Particle Filter.
+
+                          \item Ray Tracing Shader: I
+                                ported Keenan Crane's
+                                implementation\footnote{
+                                  \url{https://www.cs.cmu.%
+                                    edu/~kmcrane/Projects/%
+                                    QuaternionJulia/paper.%
+                                    pdf}}
+                                of a Ray Tracing Shader
+                                that renders a four
+                                dimensional Julia Set to
+                                Unity3D (ShaderLab)
+                                and WebGL2/WebAssembly
+                                (OpenGL 3.0). Both
+                                implementations add
+                                animations to the rendering
+                                of the Julia Set.
+
+                          \item An architecture for
+                                distributed Reinforcement
+                                Learning: Technologies we
+                                used were Keras
+                                (on Tensorflow), OpenAI Gym
+                                and RabbitMQ.
+
+                          \item A distributed system for
+                                the IoT: We built a
+                                peer-to-peer network of
+                                sensor servers
+                                communicating over
+                                a custom protocol.
+                                Implemented on
+                                RaspberryPis, written in C.
+
+                          \item A visualization tool for
+                                graph algorithms: This tool
+                                visualizes how paths are
+                                chosen by Dijkstra's
+                                shortest path and the A*
+                                algorithm. Both are
+                                implemented with a Priority
+                                Queue based on a Binary
+                                Heap.
+
+                          \item A wine classifier: A Neural
+                                Network that classifies a
+                                wine dataset. Built with
+                                Neuroph/Neuroph Studio.
+
+                        \end{itemize} \\ & \\
+                       & Modules studied include:
+                         Algorithms, Artificial
+                         Intelligence, Discrete
+                         Mathematics/Cryptography,
+                         Distributed Systems, Software
+                         Engineering and Theoretical
+                         Computer Science. \\ & \\
+
+2013 - 2015 & A Levels, Herkenrath Upper School.
+              Intensified courses were English and Geology.
+\end{tabu}
+
+\sec{Professional Experience}
+\begin{tabu} to \linewidth {p{\datecolsize}X}
+2018 - now & Data Scientist and Programmer,
+             RLE International. Mostly Image, Text
+             Recognition and Data Sanitation tasks. We also
+             work within the domain of Computer Graphics
+             (mesh-based CAD formats and parsing tools). \\
+           & \\
+
+2015 - 2016 & Small Business System Administrator, Lieb EDV
+              Beratung. Main focus were Backup Systems and
+              Windows Server administration for several
+              small businesses.
+\end{tabu}
+
+\sec{Technologies}
+\begin{tabu} to \linewidth {lX}
+Programming languages & Python, Rust, JavaScript, C, C\#,
+                        Go, Bash, Elm, Lua, Prolog, Java\\
+                      & \\
+
+Machine Learning libraries and frameworks & scikit-learn,
+                                            Keras,
+                                            OpenAI Gym,
+                                            Tesseract-OCR,
+                                            Unity3D's AI
+                                            API,
+                                            Neuroph/Neuroph
+                                            Studio \\ & \\
+
+Distributed and parallel programming & POSIX Threads,
+                                       RabbitMQ,
+                                       Apache Kafka,
+                                       tokio-rs \\ & \\
+
+Visualization and graphics & HTML, CSS, tikz, Matplotlib,
+                             Unity3D, WebGL2, OpenGL 3.0\\
+                           & \\
+
+Others & {\LaTeX}, Git, Numpy, Node.js, OpenSUSE (Linux),
+         SQL, PL/SQL, UML
+\end{tabu}
+
+\sec{Languages}
+\begin{tabu} to \linewidth {X}
+German (native) \\ \\
+English (C1)
+\end{tabu}
+
+\sec{Memberships}
+\begin{tabu} to \linewidth {X}
+IEEE - Student Member \\ \\
+IEEE Computational Intelligence Society - Student Member
+\end{tabu}
+
+\sec{Interests}
+\begin{tabu} to \linewidth {X}
+I enjoy sports, especially basketball. On my vacations I go
+camping and hiking. I like to render mathematical
+constructs and animations, for me they are aesthetically
+very pleasing. On my website,
+\href{https://fassbender.dev}{fassbender.dev},
+you can see either a Lindenmayer-System or an animation
+showing different four dimensional Julia Sets reduced to
+three dimensions, depending on your device and browser.
+I also enjoy contemporary and classic literature, fiction
+and non-fiction alike. Furthermore I eat very spicy food
+and grow my own chilies.
+\end{tabu}
+
+\end{document}
