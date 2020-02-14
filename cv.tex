@@ -58,7 +58,7 @@
 }
 
 % Seitenabstaende
-\geometry{left=30mm,right=30mm,top=20mm,bottom=20mm}
+\geometry{left=20mm,right=20mm,top=20mm,bottom=20mm}
 
 % TikZ Bibliotheken
 \usetikzlibrary{
@@ -100,9 +100,12 @@
 %\input{libuml}
 %\input{liberm}
 
-\def\datecolsize{4cm}
+\pagenumbering{gobble}
+
 \def\sec#1{
-  \section*{#1}
+  \noindent
+  \textcolor{white}{bad workaround}\\
+  \textbf{#1} \\
   \tikz[baseline=-8pt]{
     \draw[very thick] (0,0) -- (\linewidth,0);
   }
@@ -112,11 +115,11 @@
 \begin{document}
 
 \begin{center}
-  \textbf{\Huge{Jonas Fa{\ss}bender}} \\
+  \textbf{\Large{Jonas Fa{\ss}bender}} \\
 \end{center}
 \noindent
 \begin{tabu} to \linewidth {lXl}
-\faMapMarker \ Im Lerchengrund 16, 51491 Overath, Germany
+\faMapMarker \ Edinburgh, UK
   && \\
 \faPhone \ +49 1578 8286049
   &&\faHome \ \href{https://fassbender.dev}{fassbender.dev}
@@ -129,105 +132,41 @@
 
 \sec{Research Interests}
 \begin{tabu} to \linewidth {X}
-I am currently interested in Machine Learning, especially
+I am interested in Machine Learning, especially
 focused on Conformal Prediction, predicting with
 certainty and how to implement Machine Learning models
 efficiently.
 \end{tabu}
 
 \sec{Education}
-\begin{tabu} to \linewidth {p{\datecolsize}X}
-2016 - 2019 (Expected) & BSc Computer Science, Technical
-                         University of Cologne. \\ & \\
-                       & Relevant Projects: \\
-                       &%
-                        \begin{itemize}
-                          \item Partial Classification
-                                Forest: A Monte Carlo based
-                                Meta Classifier for
-                                Supervised Learning. My
-                                first contact with the idea
-                                of predicting with
-                                certainty. Led my to
-                                Conformal Prediction.
-                                I intent to write
-                                my Bachelor Thesis about
-                                this topic.
-
-                          \item Monte Carlo Localization:
-                                Part of the Artificial
-                                Intelligence course. We
-                                localized a LEGO EV3 robot
-                                in known surroundings using
-                                a Particle Filter.
-
-                          \item Ray Tracing Shader: I
-                                ported Keenan Crane's
-                                implementation\footnote{
-                                  \url{https://www.cs.cmu.%
-                                    edu/~kmcrane/Projects/%
-                                    QuaternionJulia/paper.%
-                                    pdf}}
-                                of a Ray Tracing Shader
-                                that renders a four
-                                dimensional Julia Set to
-                                Unity3D (ShaderLab)
-                                and WebGL2/WebAssembly
-                                (OpenGL 3.0). Both
-                                implementations add
-                                animations to the rendering
-                                of the Julia Set.
-
-                          \item An architecture for
-                                distributed Reinforcement
-                                Learning: Technologies we
-                                used were Keras
-                                (on Tensorflow), OpenAI Gym
-                                and RabbitMQ.
-
-                          \item A distributed system for
-                                the IoT: We built a
-                                peer-to-peer network of
-                                sensor servers
-                                communicating over
-                                a custom protocol.
-                                Implemented on
-                                RaspberryPis, written in C.
-
-                          \item A visualization tool for
-                                graph algorithms: This tool
-                                visualizes how paths are
-                                chosen by Dijkstra's
-                                shortest path and the A*
-                                algorithm. Both are
-                                implemented with a Priority
-                                Queue based on a Binary
-                                Heap.
-
-                          \item A wine classifier: A Neural
-                                Network that classifies a
-                                wine dataset. Built with
-                                Neuroph/Neuroph Studio.
-
-                        \end{itemize} \\ & \\
-                       & Modules studied include:
-                         Algorithms, Artificial
-                         Intelligence, Discrete
-                         Mathematics/Cryptography,
-                         Distributed Systems, Software
-                         Engineering and Theoretical
-                         Computer Science. \\ & \\
-
-2013 - 2015 & A Levels, Herkenrath Upper School.
-              Intensified courses were English and Geology.
+\begin{tabu} to \linewidth {lX}
+2019 - 2020 & MSc High Performance Computing with Data Science, University of Edinburgh. \\ & \\
+            & Thesis: \\
+            & Deep Learning on SpiNNaker \\ & \\
+            & Modules include: \\
+            & Probabilistic Modeling and Reasoning,
+              Advanced Message Passing Programming,
+              Data Analytics with High Performance
+              Computing and Extreme Computing \\ & \\
+2016 - 2019 & BSc Computer Science, Technical
+              University of Cologne \\ & \\
+            & Thesis: \\
+            & Approximating the Optimal Threshold
+              for an Abstaining Classifier based
+              on a Reward Function with Regression \\ & \\
+            & Modules include: \\
+            & Algorithms, Artificial Intelligence, Discrete
+              Mathematics/Cryptography, Distributed
+              Systems, Software Engineering and Theoretical
+              Computer Science \\
 \end{tabu}
 
 \sec{Professional Experience}
-\begin{tabu} to \linewidth {p{\datecolsize}X}
-2018 - now & Data Scientist and Programmer,
+\begin{tabu} to \linewidth {lX}
+2018 - 2019 & Data Scientist and Programmer,
              RLE International. Mostly Image, Text
              Recognition and Data Sanitation tasks. We also
-             work within the domain of Computer Graphics
+             worked within the domain of Computer Graphics
              (mesh-based CAD formats and parsing tools). \\
            & \\
 
@@ -239,20 +178,18 @@ efficiently.
 
 \sec{Technologies}
 \begin{tabu} to \linewidth {lX}
-Programming languages & Python, Rust, JavaScript, C, C\#,
-                        Go, Bash, Elm, Lua, Prolog, Java\\
+Programming languages & Julia, Python, Rust, Fortran, C,
+                        JavaScript, Go, Bash \\
                       & \\
 
 Machine Learning libraries and frameworks & scikit-learn,
                                             Keras,
-                                            OpenAI Gym,
-                                            Tesseract-OCR,
-                                            Unity3D's AI
-                                            API,
-                                            Neuroph/Neuroph
-                                            Studio \\ & \\
+                                            Tensorflow,
+                                            OpenAI Gym \\
+                                          & \\
 
-Distributed and parallel programming & POSIX Threads,
+Distributed and parallel programming & MPI, OpenMP,
+                                       POSIX Threads,
                                        RabbitMQ,
                                        Apache Kafka,
                                        tokio-rs \\ & \\
@@ -269,27 +206,6 @@ Others & {\LaTeX}, Git, Numpy, Node.js, OpenSUSE (Linux),
 \begin{tabu} to \linewidth {X}
 German (native) \\ \\
 English (C1)
-\end{tabu}
-
-\sec{Memberships}
-\begin{tabu} to \linewidth {X}
-IEEE - Student Member \\ \\
-IEEE Computational Intelligence Society - Student Member
-\end{tabu}
-
-\sec{Interests}
-\begin{tabu} to \linewidth {X}
-I enjoy sports, especially basketball. On my vacations I go
-camping and hiking. I like to render mathematical
-constructs and animations, for me they are aesthetically
-very pleasing. On my website,
-\href{https://fassbender.dev}{fassbender.dev},
-you can see either a Lindenmayer-System or an animation
-showing different four dimensional Julia Sets reduced to
-three dimensions, depending on your device and browser.
-I also enjoy contemporary and classic literature, fiction
-and non-fiction alike. Furthermore I eat very spicy food
-and grow my own chilies.
 \end{tabu}
 
 \end{document}
