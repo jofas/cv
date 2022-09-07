@@ -4,7 +4,7 @@
 
 * [ ] separate cv's for science, cloud
 
-* xx] Keycloak, OpenID Connect
+* [x] Keycloak, OpenID Connect
 
 * [x] GCP, Elastic Cloud on Kubernetes, ROOK/Ceph, Firebase
 
