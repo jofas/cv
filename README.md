@@ -2,8 +2,10 @@
 
 ## TODO
 
-* [ ] Keycloak, OpenID Connect
+* [x] separate cv's for science, cloud
 
-* [ ] GCP, Elastic Cloud on Kubernetes, ROOK/Ceph, Firebase
+* [x] Keycloak, OpenID Connect
 
-* [ ] conformal prediction project
+* [x] GCP, Elastic Cloud on Kubernetes, ROOK/Ceph, Firebase
+
+* [x] conformal prediction project
