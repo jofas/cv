@@ -137,7 +137,8 @@ Into cloud computing from a DevOps perspective (making Ops as simple
 as possible so developers like myself can focus on creating better
 software).
 \else\ifx\FOR\HPC
-hello hpc!
+I love the challenge of implementing data-heavy applications and
+fast algorithms efficiently while maintaining good software practices.
 \fi\fi
 
 \section*{Professional Experience}
@@ -148,7 +149,7 @@ hello hpc!
   projects:
 
   \begin{itemize}[label={}, leftmargin=*]
-    \item \textbf{\href{https://carpolice.de}{carpolice.de}.}
+    \item \textbf{\href{https://carpolice.de}{carpolice.de.}}
       Insurtech platform for car salespersons, enabling them to sell
       car insurance products.
       Helped 300+ car salespersons sell 2k insurance policies since
@@ -234,17 +235,30 @@ Python Frontends of the SpiNNaker software stack.
 Programming languages
 & Rust, Dart, Python, JavaScript, Julia, Bash, C, Go, Fortran \\
 & \\
+\ifx\FOR\CLOUD
 Cloud Computing
 & Kubernetes, Docker, Google Cloud Platform, Elastic Cloud on
   Kubernetes, ROOK/Ceph, Firebase \\
+\else\ifx\FOR\HPC
+Data Science
+& scikit-learn, Keras, Tensorflow, numpy, pandas, DataFrames.jl,
+  Matplotlib \\
+\fi\fi
 & \\
 Distributed and parallel programming
 & MPI, OpenMP, POSIX Threads, RabbitMQ, Apache Kafka, tokio-rs,
   rayon-rs \\
 & \\
 Others
-& Flutter, HTML+CSS, OpenID Connect, Keycloak, Git, Node.js, {\LaTeX},
-  OpenSUSE/Linux, SQL \\
+& \ifx\FOR\CLOUD
+  Flutter, HTML+CSS, OpenID Connect, Keycloak, Git, {\LaTeX},
+  OpenSUSE/Linux, SQL, scikit-learn, Keras, Tensorflow, numpy, pandas,
+  Matplotlib
+\else\ifx\FOR\HPC
+  Kubernetes, Docker, Flutter, HTML+CSS, OpenID Connect, Keycloak,
+  Git, {\LaTeX}, OpenSUSE/Linux, SQL
+\fi\fi
+\\
 \end{tabu}
 
 \end{document}

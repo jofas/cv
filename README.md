@@ -2,7 +2,7 @@
 
 ## TODO
 
-* [ ] separate cv's for science, cloud
+* [x] separate cv's for science, cloud
 
 * [x] Keycloak, OpenID Connect
 
