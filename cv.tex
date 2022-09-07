@@ -98,18 +98,10 @@
     escapeinside={\%*}{*\%},
 }
 
-%\input{libuml}
-%\input{liberm}
-
 \pagenumbering{gobble}
 
-\def\sec#1{
-  ~\\
-  \textbf{\large{#1}} \\
-  \tikz[baseline=-3pt]{
-    \draw[very thick] (0,0) -- (\linewidth,0);
-  }
-}
+\def\CLOUD{cloud}
+\def\HPC{hpc}
 
 \setlength\parindent{0pt}
 
@@ -140,9 +132,13 @@ Software Engineer with a background in Data Science and Machine
 Learning, focused on predicting with certainty.
 Well versed in parallel and distributed computing techniques and
 patterns.
+\ifx\FOR\CLOUD
 Into cloud computing from a DevOps perspective (making Ops as simple
 as possible so developers like myself can focus on creating better
 software).
+\else\ifx\FOR\HPC
+hello hpc!
+\fi\fi
 
 \section*{Professional Experience}
 
