@@ -116,7 +116,7 @@
 \noindent
 \begin{tabu} to \linewidth {lXl}
 \faMapMarker \ Cologne, Germany
-  &&\faHome \ \href{https://fassbender.dev}{fassbender.dev}
+  &&
   \\
 \faPhone \ +49 1578 8286049
   && \faGithub \ \href{https://github.com/jofas}{jofas}
@@ -135,12 +135,11 @@ patterns.
 \ifx\FOR\CLOUD
 Interested in cloud computing and DevOps for reducing the overhead and
 hardships of Ops as much as possible.
-Searching for the most obvious and simplest solution.
 \else\ifx\FOR\HPC
-I love the challenge of implementing distributed, data-heavy
-applications and fast algorithms efficiently while maintaining good
-software practices.
+Passionate about implementing distributed, data-heavy applications and
+fast algorithms efficiently while maintaining good software practices.
 \fi\fi
+Searching for the most obvious and simplest solution.
 
 \section*{Professional Experience}
 
@@ -152,19 +151,20 @@ software practices.
     \item \textbf{\href{https://carpolice.de}{carpolice.de.}}
       Insurtech platform for car dealers, enabling them to sell
       car insurance products.
-      Helped 300+ car dealers sell 2k insurance policies since
+      Used by 300+ car dealers to sell 2k insurance policies since
       launch in April 2021.
-      RESTful API-first microservice application with a web client as
-      frontend.
+      RESTful API-first microservice application written in Rust with
+      a web client written in Dart/Flutter.
+      Hosted on GKE.
+      Used technologies include MongoDB, Redis, Elastic stack,
+      Keycloak, ROOK/Ceph and OpenVPN.
       Creator and maintainer of 70k+ LoC.
 
-    \item \textbf{German Sport University Cologne: Application for
-      teachers to conveniently generate rich semester plans applying
-      Inquiry-based Learning.}
-      Helped the initiators of this project by creating a technical
-      specification of the application and its domain.
-      Currently in the stage of raising funds for the development of
-      the application.
+    \item \textbf{German Sport University Cologne.}
+      Created the technical domain specification for an
+      application for teachers to conveniently generate rich semester
+      plans that apply Inquiry-based Learning.
+      Currently in the stage of raising funds for development.
 
     \item \textbf{Improving the consumer loan approval process of a
       German bank using Machine Learning.}
@@ -178,13 +178,12 @@ software practices.
   \end{itemize}
 
 \item \textbf{Sep 2018 -- Jul 2019: Working Student, RLE International.}
-In a team with other students, tried finding ways for RLE
+In a team with other students, explored ways for RLE
 International to adopt Machine Learning as an emerging technology and
-create ML-powered products and solutions for its customers.
+create ML-powered products and solutions for customers.
 Applied different ML-models to OEM ECRs (Engineering Change Requests)
-of an automobile manufacturer, trying to predict whether an ECR is
-going to take too much time to be resolved.
-
+of an automobile manufacturer, predicting whether an ECR is going to
+take too much time to be resolved.
 
 \item \textbf{Jul 2015 -- Aug 2016: Small Business System Administrator,
 Lieb EDV Beratung.}
@@ -235,31 +234,19 @@ Python Frontends of the SpiNNaker software stack.
 \begin{tabu} to \linewidth {lX}
 Programming languages
 & Rust, Dart, Python, JavaScript, Julia, Bash, C, Go, Fortran \\
-& \\
-\ifx\FOR\CLOUD
+&\\
 Cloud Computing
 & Kubernetes, Docker, Google Cloud Platform, Elastic Cloud on
   Kubernetes, ROOK/Ceph, Firebase \\
-\else\ifx\FOR\HPC
+&\\
 Data Science
 & scikit-learn, Keras, Tensorflow, numpy, pandas, DataFrames.jl,
   Matplotlib \\
-\fi\fi
-& \\
-Distributed and parallel programming
-& MPI, OpenMP, POSIX Threads, RabbitMQ, Apache Kafka, tokio-rs,
-  rayon-rs \\
-& \\
+&\\
 Others
-& \ifx\FOR\CLOUD
-  Flutter, HTML+CSS, OpenID Connect, Keycloak, Git, {\LaTeX},
-  OpenSUSE/Linux, SQL, scikit-learn, Keras, Tensorflow, numpy, pandas,
-  Matplotlib
-\else\ifx\FOR\HPC
-  Kubernetes, Docker, Flutter, HTML+CSS, OpenID Connect, Keycloak,
-  Git, {\LaTeX}, OpenSUSE/Linux, SQL
-\fi\fi
-\\
+& Flutter, HTML+CSS, OpenID Connect, Keycloak, Git, {\LaTeX},
+  OpenSUSE/Linux, SQL, MongoDB, Redis, Elastic stack, RabbitMQ, Kafka,
+  MPI, OpenMP \\
 \end{tabu}
 
 \end{document}
