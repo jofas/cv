@@ -1,0 +1,31 @@
+name: Build
+on: 
+  push:
+    branches:
+      - "master"
+  workflow_dispatch:
+jobs:
+  BuildAndDeployOnHomepage:
+    runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: cv
+      - uses: actions/checkout@v3
+        with:
+          repository: jofas/jofas.github.io
+          token: ${{ secrets.GH_PAT }}
+          path: homepage
+      - run: |
+          cd cv
+          lualatex resume.tex
+          cd ..
+          cp cv/resume.pdf homepage/src/static
+          cd homepage
+          git config user.name jofas
+          git config user.email jonas@fc-web.de
+          git add .
+          git commit -m "updated resume"
+          git push
