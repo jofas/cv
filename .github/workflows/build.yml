@@ -8,7 +8,7 @@ jobs:
   BuildAndDeployOnHomepage:
     runs-on: ubuntu-latest
     container:
-      image: texlive/texlive@latest
+      image: texlive/texlive:latest
     steps:
       - uses: actions/checkout@v3
         with:
