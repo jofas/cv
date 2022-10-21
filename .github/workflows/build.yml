@@ -1,0 +1,25 @@
+name: Build
+on: 
+  push:
+    branches:
+      - "master"
+  workflow_dispatch:
+jobs:
+  DeployOnHomepage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: cv
+      - uses: actions/checkout@v3
+        with:
+          repository: jofas/jofas.github.io
+          path: homepage
+      - run: |
+          cp cv/resume.pdf homepage/src/static
+          cd homepage
+          git config user.name jofas
+          git config user.email jonas@fc-web.de
+          git add .
+          git commit -m "updated resume"
+          git push
