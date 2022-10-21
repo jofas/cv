@@ -5,8 +5,10 @@ on:
       - "master"
   workflow_dispatch:
 jobs:
-  DeployOnHomepage:
+  BuildAndDeployOnHomepage:
     runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive@latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -17,6 +19,9 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           path: homepage
       - run: |
+          cd cv
+          lualatex resume.tex
+          cd ..
           cp cv/resume.pdf homepage/src/static
           cd homepage
           git config user.name jofas
