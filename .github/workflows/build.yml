@@ -1,5 +1,5 @@
 name: Build
-on: 
+on:
   push:
     branches:
       - "master"
@@ -22,7 +22,7 @@ jobs:
           cd cv
           lualatex resume.tex
           cd ..
-          cp cv/resume.pdf homepage/src/static
+          cp cv/resume.pdf homepage/static/static
           cd homepage
           git config user.name jofas
           git config user.email jonas@fc-web.de
