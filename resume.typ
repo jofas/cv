@@ -1,35 +1,30 @@
 #import "@preview/fontawesome:0.2.0": fa-icon
 
-#set page(
-  margin: (x: 7.5mm, y: 5mm),
-)
+#set page(margin: (x: 7.5mm, y: 5mm))
 
 #set text(
   font: "Lato",
-  size: 10pt,
+  size: 9pt,
   baseline: -0.1em,
 )
 
-#set par(
-  justify: true,
-)
+#set par(justify: true)
 
 #set grid(row-gutter: 0.75em, column-gutter: 1em)
 
 #show link: underline
 
 #show heading: h => {
-  set text(font: "Alegreya")
   if h.depth == 1 {
-    set text(size: 1.25em)
+    set text(size: 1.75em)
     align(center, h.body)
   } else if h.depth == 2 {
-    set text(size: 1.1em)
+    set text(size: 1.4em)
     h.body
     line(start: (0pt, -0.75em), length: 100%)
-  } else [
-    #h.body
-  ]
+  } else {
+    h.body
+  }
 }
 
 = Jonas Fassbender
