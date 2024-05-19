@@ -10,19 +10,19 @@ jobs:
     container:
       image: rust:latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           path: cv
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: jofas/jofas.github.io
           token: ${{ secrets.GH_PAT }}
           path: homepage
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: typst/typst
           path: typst
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: google/fonts
           path: fonts
