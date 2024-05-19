@@ -8,7 +8,7 @@ jobs:
   BuildAndDeployOnHomepage:
     runs-on: ubuntu-latest
     container:
-      image: texlive/texlive:latest
+      image: rust:latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -18,11 +18,34 @@ jobs:
           repository: jofas/jofas.github.io
           token: ${{ secrets.GH_PAT }}
           path: homepage
-      - run: |
+      - uses: actions/checkout@v3
+        with:
+          repository: typst/typst
+          path: typst
+      - uses: actions/checkout@v3
+        with:
+          repository: google/fonts
+          path: fonts
+      - name: Download and unzip fontawesome v6 free fonts
+        run: |
+          wget https://use.fontawesome.com/releases/v6.5.2/fontawesome-free-6.5.2-desktop.zip
+          unzip fontawesome-free-6.5.2-desktop.zip
+      - name: Install typst
+        run: |
+          cd typst
+          cargo build --release
+      - name: Build resume
+        run: |
           cd cv
-          lualatex resume.tex
-          cd ..
-          cp cv/resume.pdf homepage/static/static
+          /typst/target/release/typst compile \
+            --font-path /fonts/ofl/lato/ \
+            --font-path fontawesome-free-6.5.2-desktop/ \
+            resume.typ
+      - name: Copy resume to homepage repo
+        run: |
+          cp /cv/resume.pdf /homepage/static/static
+      - name: Publish resume
+        run: |
           cd homepage
           git config user.name jofas
           git config user.email jonas@fc-web.de
