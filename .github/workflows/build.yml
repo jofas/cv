@@ -36,19 +36,14 @@ jobs:
           cargo build --release
       - name: Build resume
         run: |
-          ls
           cd cv
-          ls /
-          ls /typst
-          ls /typst/target
-          ls /typst/target/release
-          /typst/target/release/typst compile \
+          ../typst/target/release/typst compile \
             --font-path /fonts/ofl/lato/ \
             --font-path fontawesome-free-6.5.2-desktop/ \
             resume.typ
       - name: Copy resume to homepage repo
         run: |
-          cp /cv/resume.pdf /homepage/static/static
+          cp cv/resume.pdf homepage/static/static
       - name: Publish resume
         run: |
           cd homepage
