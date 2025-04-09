@@ -64,7 +64,6 @@ Rustacean.
   Created the technical domain specification for an application for
   teachers to conveniently generate rich semester plans that apply
   Inquiry-based Learning.
-  Currently in the stage of raising funds for development.
 
 - #link("https://carpolice.de")[*carpolice.de.*]
   Developed second iteration of the carpolice.de Insurtech platform,
@@ -85,7 +84,6 @@ Rustacean.
   bureau.
   Able to pre-reject 17\% of all rejected requests while maintaining
   an accuracy of 98\%.
-  Currently not applied in production.
 
 *Sep 2018 -- Jul 2019: Working Student, RLE International.*
 In a team with other students, explored ways for RLE International to
@@ -103,9 +101,9 @@ tasks on Windows servers and domains for several small businesses.
 
 *Rust.*
 Creator and maintainer of #link("https://crates.io/users/jofas")[various Rust crates]
-with 250k+ combined downloads from crates.io.
+with 1m+ combined downloads from crates.io.
 #link("https://users.rust-lang.org/u/jofas/summary")[Regular] on the
-Rust Users Forum with 300+ solutions.
+Rust Users Forum with 500+ solutions.
 Occasional contributor to core Rust projects like
 #link("https://github.com/rust-lang/cargo")[Cargo] and community
 projects like #link("https://github.com/actix/")[Actix].
